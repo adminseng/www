@@ -1,0 +1,11 @@
+## Exclude Rewriting Some Directory's Extensions
+RewriteRule /ROOT/ - [L,NC]  ## REMOVE THIS LINE AFTER ASSIGNMENT COMPLETED
+RewriteRule /services/ - [L,NC]
+RewriteRule /sales/ - [L,NC]
+RewriteRule /development/ - [L,NC]
+
+## Hide All Webpage Extensions
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
