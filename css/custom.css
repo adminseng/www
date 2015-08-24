@@ -1,1 +1,17 @@
 /* Add here all your CSS customizations */
+
+/* Colors */
+.red { color: red; }
+.lightred { color: lightred; }
+.orange { color: orange; }
+.lightorange{ color: lightorange; }
+.green { color: green; }
+.lightgreen { color: lightgreen; }
+.blue { color: blue; }
+.lightblue  {color: #0088CC; }
+.purple { color: purple; }
+.pink { color: pink; }
+.lightpink { color: lightpink; }
+.black { color: black; }
+.grey { color: grey; }
+.lightgrey { color: lightgrey; }
