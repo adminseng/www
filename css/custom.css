@@ -15,3 +15,36 @@
 .black { color: black; }
 .grey { color: grey; }
 .lightgrey { color: lightgrey; }
+
+
+div.footer-copyright-no-contact {
+	background: #0C0C0C;
+	border-top: 4px solid #111;
+	margin-top: 40px;	
+	font-size: 0.9em;
+	padding: 30px 0 25px;
+}
+div.footer-copyright-no-contact a{
+	color: #FFF;
+}
+div.footer-copyright-no-contact a:hover{
+	color: #FFF;
+}
+div.footer-copyright-no-contact nav ul li {
+	border-left: 1px solid #505050;
+	display: inline-block;
+	line-height: 12px;
+	margin: 0;
+	padding: 0 8px;
+}
+
+div.footer-copyright-no-contact nav ul li:first-child {
+	border: medium none;
+	padding-left: 0;
+}
+
+div.footer-copyright-no-contact nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

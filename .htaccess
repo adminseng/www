@@ -1,8 +1,4 @@
 ## Exclude Rewriting Some Directory's Extensions
-RewriteCond %{REQUEST_URI} !^/ROOT/.*$
-RewriteCond %{REQUEST_URI} !^/services/.*$
-RewriteCond %{REQUEST_URI} !^/sales/.*$
-RewriteCond %{REQUEST_URI} !^/development/.*$
 
 ## Hide All Webpage Extensions
 RewriteEngine On
