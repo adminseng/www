@@ -46,8 +46,19 @@
 
 		<!-- Head Libs -->
 		<script src="/vendor/modernizr.js"></script>
+                    <!--
+                        Self define scripting
+                    -->
 
+                        <script type="text/javascript">
+                            function changepage() {
+                                window.location = "pc-games-db-connect.php";
+                            }
+                        </script>
 
+                    <!--
+                        Self define scripting
+                    -->
 
 
 		<!--[if IE]>
@@ -255,43 +266,56 @@
 									<li><a href="/index.html">Home</a> <span class="divider">/</span></li>
                                     <li><a href="/sales/home">Sales</a> <span class="divider">/</span></li>
                                     <li><a href="/sales/pc-games">Window Games</a> <span class="divider">/</span></li>
-                                    <li class="active">Order Form</li>
+                                    <li class="active">Search</li>
 								</ul>
 							</div>
 						</div>
 						<div class="row">
 							<div class="span12">
-								<h2>Window Games Order Form</h2>
+								<h2>Search for Games</h2>
 							</div>
 						</div>
 					</div>
 				</section>
 
 				<div class="container">
-                    <h2>
                         <div class="row">
-
-						    <div class="span4">
-                                <a href="http://seng.tk/pm" class="btn btn-primary">Contact Us @ Facebook</a> <span class="hlb hidden-phone"></span>
-                            </div>
-                            <div class="span4">
-                                <a href="http://support.sengcomputerservices.com/calc.html" class="btn btn-primary">Price Calculator</a> <span class="hlb hidden-phone"></span>
-                            </div>
-                            <div class="span4">
-                                <a href="pc-games-search" class=" btn btn-primary">Search Games</a> <span class="hlb hidden-phone"></span>
+                            <div class="span12" align="center">
+                                <select>
+                                    <option value="default">---     Genre    ---</option>
+                                    <option value="default">---Any---</option>
+                                    <option value="default">---Any---</option>
+                                    <option value="default">---Any---</option>
+                                </select>
+                                <select>
+                                    <option value="default">---    # of CD    ---</option>
+                                    <option value="default">---Any---</option>
+                                    <option value="default">---Any---</option>
+                                    <option value="default">---Any---</option>
+                                </select>
                             </div>
                         </div>
-                    </h2>
-						<div class="row">
-                            <div class="span12">
-                                <script src="http://www.emailmeform.com/builder/forms/jsform/Xs32x1e6cH7k3OtR2Eaj" type="text/javascript"></script>
+                        <div class="row">
+                            <div class="span12" align="center">
+                                <input type="text" name="keyword" placeholder="Game Name"/>
                             </div>
-                            
                         </div>
-
+                        <div class="row">
+                            <div class="span12" align="center">
+                                # of Results : 
+                                <select style="width: 100px">
+                                    <option value="default">500</option>
+                                    <option value="default">50</option>
+                                    <option value="default">20</option>
+                                    <option value="default">10</option>
+                                </select>
+                                <button type="button" onclick="changepage();">Search</button>
+                            </div>
+                        </div>
 				</div>
 
 			</div>
+            <hr size=2>
 
 							
 			<div class="footer-copyright-no-contact">
