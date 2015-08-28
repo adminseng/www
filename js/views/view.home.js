@@ -1,7 +1,5 @@
 /*
-Name: 			View - Home
-Written by: 	Crivos - (http://www.crivos.com)
-Version: 		1.0
+Animation Script To Flip The Image
 */
 
 var Home = {
@@ -26,7 +24,7 @@ var Home = {
 			
 			setInterval( function() {
 				$("#fcSlideshow div.fc-right span:first").click();
-			}, 3000);
+			}, 4000);
 			
 		}
 	
