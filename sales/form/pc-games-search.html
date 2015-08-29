@@ -46,20 +46,7 @@
 
 		<!-- Head Libs -->
 		<script src="/vendor/modernizr.js"></script>
-                    <!--
-                        Self define scripting
-                    -->
-
-                        <script type="text/javascript">
-                            function changepage() {
-                                window.location = "pc-games-db-connect.php";
-                            }
-                        </script>
-
-                    <!--
-                        Self define scripting
-                    -->
-
+                    
 
 		<!--[if IE]>
 			<link rel="stylesheet" href="css/ie.css">
@@ -271,7 +258,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="span12">
+							<div class="span12" id="testoutput">
 								<h2>Search for Games</h2>
 							</div>
 						</div>
@@ -281,42 +268,81 @@
 				<div class="container">
                         <div class="row">
                             <div class="span12" align="center">
-                                <select>
-                                    <option value="default">---     Genre    ---</option>
-                                    <option value="default">---Any---</option>
-                                    <option value="default">---Any---</option>
-                                    <option value="default">---Any---</option>
+                                <select class="selectedGenre">
+                                    <option value="default">--- Genre ---</option>
+                                    <option value="selection1">First Person Shooter (FPS)</option>
+                                    <option value="selection2">Role-Playing Game (RPG)</option>
+                                    <option value="seelction3">Strategy</option>
                                 </select>
-                                <select>
-                                    <option value="default">---    # of CD    ---</option>
-                                    <option value="default">---Any---</option>
-                                    <option value="default">---Any---</option>
-                                    <option value="default">---Any---</option>
+                                <select class="selectedCD">
+                                    <option value="default">--- # of CD ---</option>
+                                    <option value="selection1">1</option>
+                                    <option value="selection2">2</option>
+                                    <option value="selection3">3</option>
+                                    <option value="selection4">4</option>
+                                    <option value="selection5">5</option>
+                                    <option value="selection6">6</option>
+                                    <option value="selection7">7</option>
+                                    <option value="selection8">8</option>
+                                    <option value="selection9">9</option>
+                                    <option value="selection10">10</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="span12" align="center">
-                                <input type="text" name="keyword" placeholder="Game Name"/>
+                                <input id="selectedKeyword" type="text" placeholder="Game Name" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="span12" align="center">
                                 # of Results : 
-                                <select style="width: 100px">
+                                <select class="selectedResult" style="width: 10%">
                                     <option value="default">500</option>
-                                    <option value="default">50</option>
-                                    <option value="default">20</option>
-                                    <option value="default">10</option>
+                                    <option value="selection1">50</option>
+                                    <option value="selection2">20</option>
+                                    <option value="selection3">10</option>
                                 </select>
-                                <button type="button" onclick="changepage();">Search</button>
+                                <button type="button" id="search-btn" onclick="retrieveData();">Search</button>
                             </div>
                         </div>
 				</div>
+                <hr size=2>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Code
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Genre
+                                        </th>
+                                        <th>
+                                            # of CD
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="result-table">
 
-			</div>
-            <hr size=2>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
+                </div>
+
+            </div>
+            
 							
 			<div class="footer-copyright-no-contact">
 				<div class="container">
@@ -367,6 +393,7 @@
 
 		<!-- Custom JS -->
 		<script src="/js/custom.js"></script>
+        <script type="text/javascript" src="/js/updateRow.js"></script>
 
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
