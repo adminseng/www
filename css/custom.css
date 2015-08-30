@@ -48,3 +48,7 @@ div.footer-copyright-no-contact nav ul {
 	margin: 0;
 	padding: 0;
 }
+
+div.pagination{
+	float : right;
+}
