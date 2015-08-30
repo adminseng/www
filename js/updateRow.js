@@ -1,4 +1,4 @@
-function retrieveData () {
+function retrieveData() {
     $("#result-table").html("");
 
     var tempGenre = $(".selectedGenre :selected").val();

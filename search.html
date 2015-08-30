@@ -47,6 +47,7 @@
 
 		<!-- Head Libs -->
 		<script src="vendor/modernizr.js"></script>
+        
 
 		<!--[if IE]>
 			<link rel="stylesheet" href="css/ie.css">
@@ -68,6 +69,7 @@
 
 	</head>
 	<body>
+        
 
 		<div class="body">
 			<header>
@@ -78,10 +80,10 @@
 						</a>
 					</h1>
 					<div class="search">
-						<form class="form-search" id="searchForm" action="page-search-results.html" method="get">
+						<form class="form-search" id="searchForm" action="" method="get">
 							<div class="control-group">
 								<input type="text" class="input-medium search-query" name="q" id="q" placeholder="Search...">
-								<button class="search" type="submit"><i class="icon-search"></i></button>
+								<button class="search" type="submit" onclick="refresh();"><i class="icon-search"></i></button>
 							</div>
 						</form>
 					</div>
@@ -199,27 +201,16 @@
 						</div>
 					</div>
 				</section>
-
+                
 				<div class="container">
 
-					<div class="search-results">
-						<script>
-						  (function() {
-							var cx = '123:456'; // Insert your own Custom Search engine ID here
-							var gcse = document.createElement('script');
-							gcse.type = 'text/javascript';
-							gcse.async = true;
-							gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-								'//www.google.com/cse/cse.js?cx=' + cx;
-							var s = document.getElementsByTagName('script')[0];
-							s.parentNode.insertBefore(gcse, s);
-						  })();
-						</script>
+					<div id="search-result">
 						
-						<gcse:searchresults-only></gcse:searchresults-only>
+                       
 					</div>
 
 				</div>
+                
 
 			</div>
 
@@ -318,7 +309,7 @@
 		<script src="vendor/isotope/jquery.isotope.js"></script>
 
 		<script src="js/plugins.js"></script>
-
+        <script type="text/javascript" src="/js/searchSite.js"></script>
 		<!-- Page Scripts -->
 
 		<!-- Theme Initializer -->
