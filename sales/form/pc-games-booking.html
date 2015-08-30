@@ -47,6 +47,22 @@
 		<!-- Head Libs -->
 		<script src="/vendor/modernizr.js"></script>
 
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $("#txtSearch").live('keyup', function () {
+                var value=$("#txtSearch").val();
+                setTimeout(function(){
+                    if ($("#txtSearch").val() == value)
+                    {
+                        LoadList(1)      
+                    }
+                },500);
+            });
+
+
+    });
+        </script>
 
 
 
@@ -70,7 +86,7 @@
 
 	</head>
 	<body>
-
+        
 		<div class="body">
             <header>
                 <div class="container">
@@ -80,7 +96,7 @@
                         </a>
                     </h1>
                     <div class="search">
-                        <form class="form-search" id="searchForm" action="page-search-results.html" method="get">
+                        <form class="form-search" id="searchForm" action="/search" method="get">
                             <div class="control-group">
                                 <input type="text" class="input-medium search-query" name="q" id="q" placeholder="Search...">
                                 <button class="search" type="submit"><i class="icon-search"></i></button>
@@ -284,40 +300,42 @@
                     </h2>
 						<div class="row">
                             <div class="span12">
-                                <script src="http://www.emailmeform.com/builder/forms/jsform/Xs32x1e6cH7k3OtR2Eaj" type="text/javascript"></script>
+                                <iframe src="http://www.emailmeform.com/builder/forms/jsform/Xs32x1e6cH7k3OtR2Eaj">
+
+                                </iframe>
+                                
+                                
                             </div>
                             
                         </div>
-
+                    
 				</div>
 
 			</div>
-
-							
-			<div class="footer-copyright-no-contact">
-				<div class="container">
-					<div class="row">
-						<div class="span1">
-							<a href="index.html" class="logo">
-								<img alt="Porto Website Template" src="/img/logo-footer.png">
-							</a>
-						</div>
-						<div class="span7">
-							<p>© 2012 - 2015 Seng Computer Services.<br>Developed by <a href="http://www.sengz.net" target="_blank">SenGz Dev</a>.</p>
-						</div>
-						<div class="span4">
-							<nav id="sub-menu">
-								<ul>
-									<li><a href="terms.html">Terms & Condition</a></li>
-									<li><a href="privacy.html">Privacy Policy</a></li>
-									<li><a href="sitemap.html">Sitemap</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-			
+            
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="span1">
+                                <a href="index.html" class="logo">
+                                    <img alt="Porto Website Template" src="/img/logo-footer.png">
+                                </a>
+                            </div>
+                            <div class="span7">
+                                <p>© 2012 - 2015 Seng Computer Services.<br>Developed by <a href="http://www.sengz.net" target="_blank">SenGz Dev</a>.</p>
+                            </div>
+                            <div class="span4">
+                                <nav id="sub-menu">
+                                    <ul>
+                                        <li><a href="terms.html">Terms & Condition</a></li>
+                                        <li><a href="privacy.html">Privacy Policy</a></li>
+                                        <li><a href="sitemap.html">Sitemap</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 		</div>
 
 		<!-- Libs -->
@@ -343,6 +361,7 @@
 
 		<!-- Custom JS -->
 		<script src="/js/custom.js"></script>
+        <script type="text/javascript" src="/js/searchSite.js"></script>
 
 
 		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->

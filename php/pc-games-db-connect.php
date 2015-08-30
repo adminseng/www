@@ -21,23 +21,35 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
       if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
       }
+      
+      $shouldpass = false;
+      if($criteria1 == "%"){
+        if($stmt = $conn->prepare("SELECT * FROM GameInfo WHERE (`code` LIKE ? OR `name` LIKE ?) AND `cd` LIKE ?")){
+          $shouldpass = true;
+          $stmt->bind_param("sss", $code, $name, $cd);
+        }
+      }else{
+        if($stmt = $conn->prepare("SELECT g.code,g.name,g.genre,g.cd FROM ".$criteria1." t, GameInfo g WHERE t.GameCode LIKE g.code AND g.name LIKE ? AND g.cd LIKE ?")){
+          $shouldpass = true;
+          $stmt->bind_param("ss", $name, $cd);
+        }
+      }
 
-	  if($stmt = $conn->prepare("SELECT * FROM DumbTable WHERE `name` LIKE ? AND `genre` LIKE ? AND `cd` LIKE ?")){
-		  $stmt->bind_param("sss", $name, $genre, $cd);
+	  if($shouldpass){
 
+      $code = "%".$criteria3."%";
 		  $name = "%".$criteria3."%";
 		  $genre = $criteria1;
 		  $cd = $criteria2;
-
 		
 		  $stmt->execute();
-		  $stmt->bind_result($r_index,$r_name,$r_genre,$r_cd);
-
+		  $stmt->bind_result($r_code,$r_name,$r_genre,$r_cd);
+      $stmt->store_result();
+      
       $i = 0;
-
 		  while($stmt->fetch() && $i < $maxRecords) {
         $i += 1;
-			  $rows["index"] = $r_index;
+			  $rows["code"] = $r_code;
 			  $rows["name"] = $r_name;
 			  $rows["genre"] = $r_genre;
 			  $rows["cd"] = $r_cd;
