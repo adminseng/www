@@ -55,3 +55,7 @@ div.pagination{
 .selectedResult{
 	width: 15%;
 }
+
+.label-margin {
+	margin: 10px;
+}
