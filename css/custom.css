@@ -77,3 +77,7 @@ div.addthis_toolbox {
 div.addthis_toolbox a{
 	margin-right : 10px;
 }
+
+div.center-content{
+	text-align:center;
+}
