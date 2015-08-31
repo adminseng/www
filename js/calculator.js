@@ -32,17 +32,17 @@ function finishedTyping() {
         var number = parseInt(valueString); //input number by user
         var price = 0;  //final price to be display
 
-        var first_state = 4;        //first stage to calculate
-        var second_stage = 6;       //second stage to calculate
+        var first_state = 5;        //first stage to calculate, until 5th cd
+        var second_stage = 10;       //second stage to calculate
 
-        var isPromotion = false;        //determine whether u are having a promotion or not
-        var promotion_stage_lower = 0;  //included
-        var promotion_stage_upper = 0;  //included
+        var isPromotion = true;        //determine whether u are having a promotion or not
+        var promotion_stage_lower = 4;  //included, from 4th cd
+        var promotion_stage_upper = 5;  //included, to 5th cd
 
         var f_stage_price = 8;          //prices for first stage
-        var s_stage_price = 4;          
-        var last_stage_price = 6;       //prices for stages range that are not specified
-        var p_stage_price = 0;          //promotion price
+        var s_stage_price = 6;
+        var last_stage_price = 5;       //prices for stages range that are not specified
+        var p_stage_price = 4;          //promotion price
 
         for (var cd_index = 1; cd_index <= number; cd_index++) {
             //if there is promotion, promotion price come first
@@ -50,24 +50,27 @@ function finishedTyping() {
             if (isPromotion) {
                 if (cd_index >= promotion_stage_lower && cd_index <= promotion_stage_upper) {
                     price += p_stage_price;
-                } else if (cd_index < first_state) {
+                } else if (cd_index <= first_state) {
                     price += f_stage_price;
-                } else if (cd_index < second_stage) {
+                } else if (cd_index <= second_stage) {
                     price += s_stage_price;
                 } else {
                     price += last_stage_price;
                 }
             //if there are no promotion, normal price used instead
-            } else if (cd_index < first_state) {
+            } else if (cd_index <= first_state) {
                 price += f_stage_price;
-            } else if (cd_index < second_stage) {
+            } else if (cd_index <= second_stage) {
                 price += s_stage_price;
             } else {
                 price += last_stage_price;
             }
         }
         //change the content
-        $("#display-price").html("Number of CD : " + number + "<br /> Cost : RM " + price);
+        $("#display-price").html("<b>Number of CD : " + number + "<br /> Cost : RM " + price + "</b>");
+    } else {
+        $("#display-price").html("<strong>Invalid Input, You should enter Integer.</strong>");
+
     }
     
 }

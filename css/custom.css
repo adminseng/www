@@ -59,11 +59,10 @@ div.pagination{
 
 .calculator-background{
 	background-image:url("/img/calculator-background.jpg");
-	width:1024px;
+	width:auto;
 	height:768px;
-}div.addthis_toolbox {
-	margin-top : 30px;
 }
-div.addthis_toolbox a{
-	margin-right : 10px;
+
+.calculator-content{
+	text-align:center;
 }

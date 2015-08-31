@@ -26,7 +26,7 @@ function retrieveData() {
         //if success in retrieving data, add into the div
         success: function (data) {
             for (var i = 0 ; i < data.length ; i++) {
-                $("#result-table").append("<tr><td>" + parseInt(i+1) + "</td><td>" + data[i].code +"</td><td>" + data[i].name + "</td><td>" + data[i].genre + "</td><td>" + data[i].cd + "</td><td><button type='button' onclick='orderNowBtn();'>Order Now!</button></td></tr>");
+                $("#result-table").append("<tr><td><strong>" + parseInt(i + 1) + "</strong></td><td><strong>" + data[i].code + "</strong></td><td><strong>" + data[i].name + "</strong></td><td><strong>" + data[i].genre + "</strong></td><td><strong>" + data[i].cd + "</strong></td><td><button type='button' onclick='orderNowBtn();'>Order Now!</button></td></tr>");
             }
         },
         //inform user something goes wrong
