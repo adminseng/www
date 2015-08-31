@@ -1,5 +1,6 @@
 function retrieveData() {
     //display loading screen
+    $("#result-body").attr("class", "");
     $("#result-table").html("<tr><td colspan='6'><div align='center'><img alt='Loading' src='/img/sales/db-load.gif'/></div></td></tr>");
 
     //get the value of required criteria for searching purpose
@@ -25,15 +26,24 @@ function retrieveData() {
         data: data,
         //if success in retrieving data, add into the div
         success: function (data) {
-            //clear the previous content if any
-            $("#result-table").html("");
-            for (var i = 0 ; i < data.length ; i++) {
-                $("#result-table").append("<tr><td><strong>" + parseInt(i + 1) + "</strong></td><td><strong>" + data[i].code + "</strong></td><td><strong>" + data[i].name + "</strong></td><td><strong>" + data[i].genre + "</strong></td><td><strong>" + data[i].cd + "</strong></td><td><button type='button' onclick='orderNowBtn();'>Order Now!</button></td></tr>");
+            if (data.length > 0) {
+                $("#result-body").attr("class", "alert alert-success");
+                //clear the previous content if any
+                $("#result-table").html("");
+                for (var i = 0 ; i < data.length ; i++) {
+                    $("#result-table").append("<tr><td><strong>" + parseInt(i + 1) + "</strong></td><td><strong>" + data[i].code + "</strong></td><td><strong>" + data[i].name + "</strong></td><td><strong>" + data[i].genre + "</strong></td><td><strong>" + data[i].cd + "</strong></td><td><button type='button' onclick='orderNowBtn();'>Order Now!</button></td></tr>");
+                }
+            } else {
+                $("#result-body").attr("class", "alert alert-error");
+                $("#result-table").html("<tr><td colspan='6'><p align='center'><strong>No Result Found, Please Try Again!</strong></p></td></tr>");
             }
+            
         },
         //inform user something goes wrong
         error: function (response) {
             alert("Error: " + response.status + ' ' + response.statusText + ' ');
+            $("#result-body").attr("class", "alert alert-error");
+            $("#result-table").html("<tr><td colspan='6'><p align='center'><strong>No Result Found, Please Try Again!</strong></p></td></tr>");
         }
     });
     return false;
