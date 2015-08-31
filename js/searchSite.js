@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //retrieve the value inside $_GET
     var $_GET = {};
     document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
         function decode(s) {
@@ -17,6 +18,7 @@ $(document).ready(function () {
 });
 
 $("#form-search").submit(function () {
+    //retrieve the value inside $_GET
     var $_GET = {};
     document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
         function decode(s) {
@@ -25,8 +27,10 @@ $("#form-search").submit(function () {
         $_GET[decode(arguments[1])] = decode(arguments[2]);
     });
     var keyword = $_GET["q"];
+    //load a local text file as JSON object into variable "data"
     $.getJSON("result.txt", function (data) {
         $.each(data, function () {
+            //compare the keyword with title of data object
             if (this.title.toLowerCase().indexOf(keyword.toLowerCase()) > -1) {
                 buildHTMLScript(this);
 
@@ -35,7 +39,7 @@ $("#form-search").submit(function () {
     });
 });
 
-
+//a function to build the HTML script
 function buildHTMLScript(data) {
     $("#search-result").append(
                     "<div class='row'>" +
