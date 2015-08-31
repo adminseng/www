@@ -1,11 +1,9 @@
 <?php
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-  if (isset($_POST["genre"]) && !empty($_POST["genre"]) && isset($_POST["cd"]) && !empty($_POST["cd"]) && isset($_POST["numberRecords"]) && !empty($_POST["numberRecords"])) { //Checks if action value exists
+  if (isset($_POST["genre"]) && !empty($_POST["genre"]) && isset($_POST["cd"]) && !empty($_POST["cd"])) { //Checks if action value exists
     $criteria1 = $_POST["genre"];
 	  $criteria2 = $_POST["cd"];
 	  $criteria3 = $_POST["keyword"];
-    $criteria4 = $_POST["numberRecords"];
-    $maxRecords = intval($criteria4);
 	  $json_array = array();
 
 
@@ -46,9 +44,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 		  $stmt->bind_result($r_code,$r_name,$r_genre,$r_cd);
       $stmt->store_result();
       
-      $i = 0;
-		  while($stmt->fetch() && $i < $maxRecords) {
-        $i += 1;
+		  while($stmt->fetch()) {
 			  $rows["code"] = $r_code;
 			  $rows["name"] = $r_name;
 			  $rows["genre"] = $r_genre;

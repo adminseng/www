@@ -52,10 +52,28 @@ div.footer-copyright-no-contact nav ul {
 div.pagination{
 	float : right;
 }
+
 .selectedResult{
 	width: 15%;
 }
 
 .label-margin {
 	margin: 10px;
+}
+
+.calculator-background{
+	background-image:url("/img/calculator-background.jpg");
+	width:auto;
+	height:768px;
+}
+
+.calculator-content{
+	text-align:center;
+}
+
+div.addthis_toolbox {
+	margin-top : 20px;
+}
+div.addthis_toolbox a{
+	margin-right : 10px;
 }
