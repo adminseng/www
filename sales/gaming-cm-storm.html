@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿F<!DOCTYPE html>
 <!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
 <!--[if gt IE 9]><!-->
@@ -480,7 +480,17 @@
 
     <!-- Custom JS -->
     <script src="/js/custom.js"></script>
-
+    <!-- Facebook Javascript Plugin SDK -->
+    <div id="fb-root"></div>
+    <script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1668777883401329";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
     <!--
     <script>

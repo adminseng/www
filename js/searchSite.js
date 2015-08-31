@@ -41,7 +41,7 @@ function buildHTMLScript(data) {
                     "<div class='row'>" +
                     "<div class='span12'>" +
                     "<img class='responsive pull-left img-rounded' alt=" + data.title + " style='width: 300px; height: 160px;margin: 10px 10px 10px 10px;' src='" + data.img + "'> " +
-                    "<p>" + data.title + "</p>" +
+                    "<h2>" + data.title + "</h2>" +
                     "<p>" + data.description + "</p>" +
                     "<a href='" + data.location + "' class=' btn btn-primary'>Go Now</a>" +
                     "</div>" +
