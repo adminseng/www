@@ -56,3 +56,9 @@ div.pagination{
 .selectedResult{
 	width: 15%;
 }
+div.addthis_toolbox {
+	margin-top : 30px;
+}
+div.addthis_toolbox a{
+	margin-right : 10px;
+}
