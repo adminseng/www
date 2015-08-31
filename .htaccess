@@ -1,6 +1,14 @@
-## Exclude Rewriting Some Directory's Extensions
-
 ## Hide All Webpage Extensions
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+## Custom Error Pages
+ErrorDocument 400 /400
+ErrorDocument 401 /401
+ErrorDocument 403 /403
+ErrorDocument 404 /404
+ErrorDocument 500 /500
+
+## Disable Directory Listing
+Options -Indexes
