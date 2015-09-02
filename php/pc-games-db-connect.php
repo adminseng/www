@@ -6,11 +6,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 	  $criteria3 = $_POST["keyword"];
 	  $json_array = array();
 
-
-      $servername = "202.150.213.34";
-      $username = "u541100416_db";
-      $password = "123456";
-      $database = "u541100416_db";
+	  // Change to your database information for localhost
+      $servername = "localhost";
+      $username = "";
+      $password = "";
+      $database = "";
 
       // Create connection
       $conn = new mysqli($servername, $username, $password, $database);
