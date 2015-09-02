@@ -29,6 +29,9 @@
 
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="/css/custom.css">
+		
+		<!-- Loading Screen CSS -->
+		<link rel="stylesheet" href="/css/please-wait.css">
 
 		<!-- Skin -->
 		<link rel="stylesheet" href="/css/skins/blue.css">
@@ -257,7 +260,19 @@
 					<h4>
 					<div class="row">
 						<div class="span12">
-							<script src="http://www.emailmeform.com/builder/forms/jsform/Ofw2dYbqcl638cibc9UVg8"></script>
+							<script src="/js/please-wait.js"></script>
+							<div>
+								<script type="text/javascript">
+									var loading_screen = pleaseWait({
+										logo: "/img/slides/slide-1-1.png",
+										backgroundColor: '#FFF',
+										loadingHtml: "<h1 class='loading-message'>Loading...</h1><div class='sk-double-bounce'><div class='sk-child sk-double-bounce1'></div><div class='sk-child sk-double-bounce2'></div></div>"
+									  });
+									  loading_screen.finish();
+									  
+								</script>
+								<script src="http://www.emailmeform.com/builder/forms/jsform/Ofw2dYbqcl638cibc9UVg8"></script>
+							</div>
 						</div>
 					</div>
 
