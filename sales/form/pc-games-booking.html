@@ -30,6 +30,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/custom.css">
+	
+	<!-- Loading Screen CSS -->
+	<link rel="stylesheet" href="/css/please-wait.css">
 
     <!-- Skin -->
     <link rel="stylesheet" href="/css/skins/blue.css">
@@ -62,7 +65,7 @@
 	-->
 
 </head>
-<body>
+<body onload="loaded()">
 
     <div class="body">
         <header>
@@ -258,7 +261,18 @@
                     </div>
                 <div class="row">
                     <div class="span12">
+						<script src="/js/please-wait.js"></script>
                         <div >
+							<script type="text/javascript">
+								var loading_screen = pleaseWait({
+									logo: "/img/logo-loading.png",
+									backgroundColor: '#FFF',
+									loadingHtml: "<h1 class='loading-message'>Loading...</h1><div class='sk-double-bounce'><div class='sk-child sk-double-bounce1'></div><div class='sk-child sk-double-bounce2'></div></div>"
+								  });
+								function loaded(){
+									loading_screen.finish();
+								}  
+							</script>
                             <script src="http://www.emailmeform.com/builder/forms/jsform/Xs32x1e6cH7k3OtR2Eaj"></script>
                         </div>
                     </div>

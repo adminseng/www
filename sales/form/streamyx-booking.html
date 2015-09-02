@@ -31,6 +31,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/custom.css">
 
+	<!-- Loading Screen CSS -->
+	<link rel="stylesheet" href="/css/please-wait.css">
+
     <!-- Skin -->
     <link rel="stylesheet" href="/css/skins/blue.css">
 
@@ -62,7 +65,7 @@
 	-->
 
 </head>
-<body>
+<body onload="loaded()">
 
     <div class="body">
         <header>
@@ -234,14 +237,14 @@
                             <ul class="breadcrumb">
                                 <li><a href="/">Home</a><span class="divider">/</span></li>
                                 <li><a href="/sales/home">Sales</a> <span class="divider">/</span></li>
-                                <li><a href="/sales/pc-games">Window Games</a> <span class="divider">/</span></li>
-                                <li class="active">Order Form</li>
+                                <li><a href="/sales/pc-games">Streamyx</a> <span class="divider">/</span></li>
+                                <li class="active">Registration Form</li>
                             </ul>
                         </div>
                     </div>
                     <div class="row">
                         <div class="span12">
-                            <h2>Window Games Order Form</h2>
+                            <h2>Streamyx Registration Form</h2>
                         </div>
                     </div>
                 </div>
@@ -257,7 +260,19 @@
                     </div>
                 <div class="row">
                     <div class="span12">
+						<script src="/js/please-wait.js"></script>
                         <div >
+							<script type="text/javascript">
+								var loading_screen = pleaseWait({
+									logo: "/img/logo-loading.png",
+									backgroundColor: '#FFF',
+									loadingHtml: "<h1 class='loading-message'>Loading...</h1><div class='sk-double-bounce'><div class='sk-child sk-double-bounce1'></div><div class='sk-child sk-double-bounce2'></div></div>"
+								  });
+								function loaded(){
+									loading_screen.finish();
+								}  
+							</script>
+
                             <iframe src="https://docs.google.com/forms/d/1EwpfnHpTIrg7pMNgj_0N6KvW4rC6bZRcShwy9aSoxug/viewform?embedded=true" width="100%" height="1400px" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
                         </div>
                     </div>
