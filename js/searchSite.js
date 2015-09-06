@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $("#search-result").html("<div align='center'><img alt='Loading' src='/img/sales/db-load.gif'/></div>");
     //retrieve the value inside $_GET
     var $_GET = {};
     document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
